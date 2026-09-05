@@ -17,6 +17,8 @@ const GOLD := Color("#f4b942")
 const RED := Color("#e65b65")
 const GREEN := Color("#66d19e")
 const MUTED := Color("#9aa7bd")
+const MIN_SIDE_MARGIN := 18
+const MAX_CONTENT_WIDTH := 900
 
 var rng := RandomNumberGenerator.new()
 var phase := Phase.SETUP
@@ -33,6 +35,7 @@ var discussion_time_left := 0.0
 var discussion_running := false
 
 @onready var pages: Control = %Pages
+@onready var page_margin: MarginContainer = $PageMargin
 @onready var round_label: Label = %RoundLabel
 @onready var title_label: Label = %TitleLabel
 @onready var subtitle_label: Label = %SubtitleLabel
@@ -75,7 +78,26 @@ var discussion_running := false
 
 func _ready() -> void:
 	rng.randomize()
+	resized.connect(_update_responsive_layout)
+	_update_responsive_layout()
 	show_setup()
+
+
+func _update_responsive_layout() -> void:
+	var is_portrait := size.y >= size.x
+	var side_margin := maxi(MIN_SIDE_MARGIN, int((size.x - MAX_CONTENT_WIDTH) / 2.0))
+	var vertical_margin := 18 if is_portrait else 12
+	page_margin.add_theme_constant_override("margin_left", side_margin)
+	page_margin.add_theme_constant_override("margin_right", side_margin)
+	page_margin.add_theme_constant_override("margin_top", vertical_margin)
+	page_margin.add_theme_constant_override("margin_bottom", vertical_margin)
+
+	for page in pages.get_children():
+		var footer := page.get_node_or_null("Footer") as HBoxContainer
+		if footer == null or footer.get_child_count() == 0:
+			continue
+		var button := footer.get_child(0) as Button
+		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL if is_portrait else Control.SIZE_SHRINK_END
 
 
 func _process(delta: float) -> void:
@@ -386,4 +408,3 @@ func sort_players_by_score(a: Dictionary, b: Dictionary) -> bool:
 func format_time(seconds: float) -> String:
 	var rounded := int(ceil(seconds))
 	return "%02d:%02d" % [int(rounded / 60.0), rounded % 60]
-
