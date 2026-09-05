@@ -1,12 +1,1015 @@
-[gd_scene format=3 uid="uid://c66ohtraphyuk"]
+[gd_scene format=3 uid="uid://bsrstx4lvfy3e"]
 
-[ext_resource type="Script" uid="uid://yir4cn2oqvmr" path="res://commons/scripts/main.gd" id="1_6bynq"]
+[ext_resource type="Script" uid="uid://c2u5tfxidrlb0" path="res://commons/scripts/main.gd" id="1_6bynq"]
 
-[node name="MainScene" type="Node" unique_id=342105006]
+[sub_resource type="StyleBoxFlat" id="StyleButtonHover"]
+bg_color = Color(0.976, 0.788, 0.416, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
 
-[node name="Control" type="Control" parent="." unique_id=849055531]
+[sub_resource type="StyleBoxFlat" id="StyleButtonNormal"]
+bg_color = Color(0.957, 0.725, 0.259, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleButtonPressed"]
+bg_color = Color(0.82, 0.584, 0.145, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StylePanel"]
+content_margin_left = 18.0
+content_margin_top = 16.0
+content_margin_right = 18.0
+content_margin_bottom = 16.0
+bg_color = Color(0.082, 0.11, 0.169, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.125, 0.165, 0.239, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Theme" id="AuctionTheme"]
+default_font_size = 18
+Button/colors/font_color = Color(0.035, 0.043, 0.059, 1)
+Button/colors/font_hover_color = Color(0.035, 0.043, 0.059, 1)
+Button/colors/font_pressed_color = Color(0.035, 0.043, 0.059, 1)
+Button/font_sizes/font_size = 18
+Button/styles/hover = SubResource("StyleButtonHover")
+Button/styles/normal = SubResource("StyleButtonNormal")
+Button/styles/pressed = SubResource("StyleButtonPressed")
+LineEdit/font_sizes/font_size = 18
+PanelContainer/styles/panel = SubResource("StylePanel")
+SpinBox/font_sizes/font_size = 26
+
+[node name="AstaBastarda" type="Control" unique_id=1772238640]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("AuctionTheme")
 script = ExtResource("1_6bynq")
+
+[node name="Background" type="ColorRect" parent="." unique_id=692948481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.035, 0.043, 0.059, 1)
+
+[node name="PageMargin" type="MarginContainer" parent="." unique_id=1001274181]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 22
+
+[node name="Content" type="VBoxContainer" parent="PageMargin" unique_id=916251725]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="PageMargin/Content" unique_id=1424501930]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Brand" type="Label" parent="PageMargin/Content/Header" unique_id=1483177745]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.957, 0.725, 0.259, 1)
+theme_override_font_sizes/font_size = 22
+text = "ASTA BASTARDA"
+
+[node name="RoundLabel" type="Label" parent="PageMargin/Content/Header" unique_id=475154136]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.604, 0.655, 0.741, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 2
+
+[node name="Separator" type="HSeparator" parent="PageMargin/Content" unique_id=423726732]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="PageMargin/Content" unique_id=706535385]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.965, 0.984, 1)
+theme_override_font_sizes/font_size = 34
+text = "Titolo"
+autowrap_mode = 2
+
+[node name="SubtitleLabel" type="Label" parent="PageMargin/Content" unique_id=417836608]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.604, 0.655, 0.741, 1)
+theme_override_font_sizes/font_size = 18
+text = "Sottotitolo"
+autowrap_mode = 2
+
+[node name="Pages" type="Control" parent="PageMargin/Content" unique_id=1708717107]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SetupPage" type="VBoxContainer" parent="PageMargin/Content/Pages" unique_id=948184297]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Scroll" type="ScrollContainer" parent="PageMargin/Content/Pages/SetupPage" unique_id=1632993505]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Body" type="VBoxContainer" parent="PageMargin/Content/Pages/SetupPage/Scroll" unique_id=1662451967]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="PlayersPanel" type="PanelContainer" parent="PageMargin/Content/Pages/SetupPage/Scroll/Body" unique_id=789931125]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/SetupPage/Scroll/Body/PlayersPanel" unique_id=385941250]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/SetupPage/Scroll/Body/PlayersPanel/Content" unique_id=735811110]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.604, 0.655, 0.741, 1)
+theme_override_font_sizes/font_size = 15
+text = "GIOCATORI"
+
+[node name="PlayerInputs" type="VBoxContainer" parent="PageMargin/Content/Pages/SetupPage/Scroll/Body/PlayersPanel/Content" unique_id=1960760604]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Player1" type="LineEdit" parent="PageMargin/Content/Pages/SetupPage/Scroll/Body/PlayersPanel/Content/PlayerInputs" unique_id=493364283]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Giocatore 1"
+placeholder_text = "Giocatore 1"
+
+[node name="Player2" type="LineEdit" parent="PageMargin/Content/Pages/SetupPage/Scroll/Body/PlayersPanel/Content/PlayerInputs" unique_id=44155315]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Giocatore 2"
+placeholder_text = "Giocatore 2"
+
+[node name="Player3" type="LineEdit" parent="PageMargin/Content/Pages/SetupPage/Scroll/Body/PlayersPanel/Content/PlayerInputs" unique_id=1598706396]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+placeholder_text = "Giocatore 3 (opzionale)"
+
+[node name="Player4" type="LineEdit" parent="PageMargin/Content/Pages/SetupPage/Scroll/Body/PlayersPanel/Content/PlayerInputs" unique_id=590656439]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+placeholder_text = "Giocatore 4 (opzionale)"
+
+[node name="Player5" type="LineEdit" parent="PageMargin/Content/Pages/SetupPage/Scroll/Body/PlayersPanel/Content/PlayerInputs" unique_id=448520860]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+placeholder_text = "Giocatore 5 (opzionale)"
+
+[node name="Player6" type="LineEdit" parent="PageMargin/Content/Pages/SetupPage/Scroll/Body/PlayersPanel/Content/PlayerInputs" unique_id=95829574]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+placeholder_text = "Giocatore 6 (opzionale)"
+
+[node name="SetupError" type="Label" parent="PageMargin/Content/Pages/SetupPage/Scroll/Body" unique_id=971878175]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.902, 0.357, 0.396, 1)
+theme_override_font_sizes/font_size = 17
+text = "Errore"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="RulesPanel" type="PanelContainer" parent="PageMargin/Content/Pages/SetupPage/Scroll/Body" unique_id=908377221]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/SetupPage/Scroll/Body/RulesPanel" unique_id=1981650426]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/SetupPage/Scroll/Body/RulesPanel/Content" unique_id=426551908]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.725, 0.259, 1)
+theme_override_font_sizes/font_size = 15
+text = "COME SI VINCE"
+
+[node name="Text" type="Label" parent="PageMargin/Content/Pages/SetupPage/Scroll/Body/RulesPanel/Content" unique_id=1041038175]
+layout_mode = 2
+text = "Dopo 6 aste, vince chi ha il patrimonio più alto: denaro rimasto + valore reale degli oggetti + bonus degli incarichi segreti."
+autowrap_mode = 2
+
+[node name="Footer" type="HBoxContainer" parent="PageMargin/Content/Pages/SetupPage" unique_id=1365415204]
+layout_mode = 2
+alignment = 2
+
+[node name="StartButton" type="Button" parent="PageMargin/Content/Pages/SetupPage/Footer" unique_id=2064347853]
+custom_minimum_size = Vector2(250, 54)
+layout_mode = 2
+text = "Inizia la partita"
+
+[node name="LotIntroPage" type="VBoxContainer" parent="PageMargin/Content/Pages" unique_id=690851415]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Scroll" type="ScrollContainer" parent="PageMargin/Content/Pages/LotIntroPage" unique_id=1569673228]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Body" type="VBoxContainer" parent="PageMargin/Content/Pages/LotIntroPage/Scroll" unique_id=922148052]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="LotPanel" type="PanelContainer" parent="PageMargin/Content/Pages/LotIntroPage/Scroll/Body" unique_id=1731753216]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/LotIntroPage/Scroll/Body/LotPanel" unique_id=1397286004]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/LotIntroPage/Scroll/Body/LotPanel/Content" unique_id=717795437]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.604, 0.655, 0.741, 1)
+theme_override_font_sizes/font_size = 15
+text = "LOTTO DEL GIORNO"
+
+[node name="LotIntroCategory" type="Label" parent="PageMargin/Content/Pages/LotIntroPage/Scroll/Body/LotPanel/Content" unique_id=1673004784]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.604, 0.655, 0.741, 1)
+text = "Categoria"
+
+[node name="MysteryValue" type="Label" parent="PageMargin/Content/Pages/LotIntroPage/Scroll/Body/LotPanel/Content" unique_id=17864625]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.725, 0.259, 1)
+theme_override_font_sizes/font_size = 30
+text = "VALORE REALE: ???"
+horizontal_alignment = 1
+
+[node name="WarningPanel" type="PanelContainer" parent="PageMargin/Content/Pages/LotIntroPage/Scroll/Body" unique_id=103698568]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/LotIntroPage/Scroll/Body/WarningPanel" unique_id=207684152]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/LotIntroPage/Scroll/Body/WarningPanel/Content" unique_id=2036108228]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.902, 0.357, 0.396, 1)
+theme_override_font_sizes/font_size = 15
+text = "ATTENZIONE"
+
+[node name="Text" type="Label" parent="PageMargin/Content/Pages/LotIntroPage/Scroll/Body/WarningPanel/Content" unique_id=1372171332]
+layout_mode = 2
+text = "Il valore reale resterà nascosto fino alla fine dell'asta. Ognuno riceverà un indizio e un incarico privato: potete dire la verità, mentire o tacere."
+autowrap_mode = 2
+
+[node name="Footer" type="HBoxContainer" parent="PageMargin/Content/Pages/LotIntroPage" unique_id=298927512]
+layout_mode = 2
+alignment = 2
+
+[node name="DistributeButton" type="Button" parent="PageMargin/Content/Pages/LotIntroPage/Footer" unique_id=938058354]
+custom_minimum_size = Vector2(320, 54)
+layout_mode = 2
+text = "Distribuisci le informazioni segrete"
+
+[node name="HandoffPage" type="VBoxContainer" parent="PageMargin/Content/Pages" unique_id=410452917]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Scroll" type="ScrollContainer" parent="PageMargin/Content/Pages/HandoffPage" unique_id=1799353875]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Body" type="VBoxContainer" parent="PageMargin/Content/Pages/HandoffPage/Scroll" unique_id=1772129259]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HandoffPanel" type="PanelContainer" parent="PageMargin/Content/Pages/HandoffPage/Scroll/Body" unique_id=478048777]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/HandoffPage/Scroll/Body/HandoffPanel" unique_id=957391220]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/HandoffPage/Scroll/Body/HandoffPanel/Content" unique_id=907626033]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.725, 0.259, 1)
+theme_override_font_sizes/font_size = 15
+text = "TOCCA A"
+
+[node name="HandoffInfo" type="Label" parent="PageMargin/Content/Pages/HandoffPage/Scroll/Body/HandoffPanel/Content" unique_id=1460859083]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Giocatore"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Footer" type="HBoxContainer" parent="PageMargin/Content/Pages/HandoffPage" unique_id=1044103378]
+layout_mode = 2
+alignment = 2
+
+[node name="HandoffButton" type="Button" parent="PageMargin/Content/Pages/HandoffPage/Footer" unique_id=406313072]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 54)
+layout_mode = 2
+text = "Sono il giocatore"
+
+[node name="SecretPage" type="VBoxContainer" parent="PageMargin/Content/Pages" unique_id=1124252152]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Scroll" type="ScrollContainer" parent="PageMargin/Content/Pages/SecretPage" unique_id=1064157197]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Body" type="VBoxContainer" parent="PageMargin/Content/Pages/SecretPage/Scroll" unique_id=751794898]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="CluePanel" type="PanelContainer" parent="PageMargin/Content/Pages/SecretPage/Scroll/Body" unique_id=1508416752]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/SecretPage/Scroll/Body/CluePanel" unique_id=635908939]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/SecretPage/Scroll/Body/CluePanel/Content" unique_id=1094095860]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.82, 0.62, 1)
+theme_override_font_sizes/font_size = 15
+text = "IL TUO INDIZIO"
+
+[node name="SecretClue" type="Label" parent="PageMargin/Content/Pages/SecretPage/Scroll/Body/CluePanel/Content" unique_id=407256052]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Indizio"
+autowrap_mode = 2
+
+[node name="ObjectivePanel" type="PanelContainer" parent="PageMargin/Content/Pages/SecretPage/Scroll/Body" unique_id=229828788]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/SecretPage/Scroll/Body/ObjectivePanel" unique_id=6224242]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/SecretPage/Scroll/Body/ObjectivePanel/Content" unique_id=706948051]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.902, 0.357, 0.396, 1)
+theme_override_font_sizes/font_size = 15
+text = "IL TUO INCARICO"
+
+[node name="SecretObjective" type="Label" parent="PageMargin/Content/Pages/SecretPage/Scroll/Body/ObjectivePanel/Content" unique_id=250939380]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Incarico"
+autowrap_mode = 2
+
+[node name="Footer" type="HBoxContainer" parent="PageMargin/Content/Pages/SecretPage" unique_id=2068762961]
+layout_mode = 2
+alignment = 2
+
+[node name="SecretDoneButton" type="Button" parent="PageMargin/Content/Pages/SecretPage/Footer" unique_id=136046727]
+custom_minimum_size = Vector2(290, 54)
+layout_mode = 2
+text = "Ho memorizzato — nascondi"
+
+[node name="DiscussionPage" type="VBoxContainer" parent="PageMargin/Content/Pages" unique_id=11600322]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Scroll" type="ScrollContainer" parent="PageMargin/Content/Pages/DiscussionPage" unique_id=1393050876]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Body" type="VBoxContainer" parent="PageMargin/Content/Pages/DiscussionPage/Scroll" unique_id=458778683]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="LotPanel" type="PanelContainer" parent="PageMargin/Content/Pages/DiscussionPage/Scroll/Body" unique_id=383242268]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/DiscussionPage/Scroll/Body/LotPanel" unique_id=1378682243]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/DiscussionPage/Scroll/Body/LotPanel/Content" unique_id=1663908520]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.604, 0.655, 0.741, 1)
+theme_override_font_sizes/font_size = 15
+text = "LOTTO DEL GIORNO"
+
+[node name="DiscussionCategory" type="Label" parent="PageMargin/Content/Pages/DiscussionPage/Scroll/Body/LotPanel/Content" unique_id=1724359393]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.604, 0.655, 0.741, 1)
+text = "Categoria"
+
+[node name="MysteryValue" type="Label" parent="PageMargin/Content/Pages/DiscussionPage/Scroll/Body/LotPanel/Content" unique_id=1266828459]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.725, 0.259, 1)
+theme_override_font_sizes/font_size = 30
+text = "VALORE REALE: ???"
+horizontal_alignment = 1
+
+[node name="DiscussionTimer" type="Label" parent="PageMargin/Content/Pages/DiscussionPage/Scroll/Body" unique_id=881393573]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.725, 0.259, 1)
+theme_override_font_sizes/font_size = 64
+text = "00:45"
+horizontal_alignment = 1
+
+[node name="Footer" type="HBoxContainer" parent="PageMargin/Content/Pages/DiscussionPage" unique_id=1423980839]
+layout_mode = 2
+alignment = 2
+
+[node name="SkipDiscussionButton" type="Button" parent="PageMargin/Content/Pages/DiscussionPage/Footer" unique_id=419969179]
+custom_minimum_size = Vector2(280, 54)
+layout_mode = 2
+text = "Passa subito alle offerte"
+
+[node name="BidPage" type="VBoxContainer" parent="PageMargin/Content/Pages" unique_id=6228973]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Scroll" type="ScrollContainer" parent="PageMargin/Content/Pages/BidPage" unique_id=494723707]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Body" type="VBoxContainer" parent="PageMargin/Content/Pages/BidPage/Scroll" unique_id=795806897]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="BidCash" type="Label" parent="PageMargin/Content/Pages/BidPage/Scroll/Body" unique_id=1515526846]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.725, 0.259, 1)
+theme_override_font_sizes/font_size = 20
+text = "Disponibilità"
+horizontal_alignment = 1
+
+[node name="ReminderPanel" type="PanelContainer" parent="PageMargin/Content/Pages/BidPage/Scroll/Body" unique_id=369503632]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/BidPage/Scroll/Body/ReminderPanel" unique_id=831528577]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ClueHeading" type="Label" parent="PageMargin/Content/Pages/BidPage/Scroll/Body/ReminderPanel/Content" unique_id=1169824038]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.82, 0.62, 1)
+theme_override_font_sizes/font_size = 15
+text = "IL TUO INDIZIO"
+
+[node name="BidClue" type="Label" parent="PageMargin/Content/Pages/BidPage/Scroll/Body/ReminderPanel/Content" unique_id=415844625]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Indizio"
+autowrap_mode = 2
+
+[node name="ObjectiveHeading" type="Label" parent="PageMargin/Content/Pages/BidPage/Scroll/Body/ReminderPanel/Content" unique_id=1484027208]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.902, 0.357, 0.396, 1)
+theme_override_font_sizes/font_size = 15
+text = "IL TUO INCARICO"
+
+[node name="BidObjective" type="Label" parent="PageMargin/Content/Pages/BidPage/Scroll/Body/ReminderPanel/Content" unique_id=234649390]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Incarico"
+autowrap_mode = 2
+
+[node name="OfferPanel" type="PanelContainer" parent="PageMargin/Content/Pages/BidPage/Scroll/Body" unique_id=917646223]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/BidPage/Scroll/Body/OfferPanel" unique_id=1662444308]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/BidPage/Scroll/Body/OfferPanel/Content" unique_id=397477998]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.604, 0.655, 0.741, 1)
+theme_override_font_sizes/font_size = 15
+text = "LA TUA OFFERTA"
+horizontal_alignment = 1
+
+[node name="BidInput" type="SpinBox" parent="PageMargin/Content/Pages/BidPage/Scroll/Body/OfferPanel/Content" unique_id=1687239751]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+max_value = 240.0
+step = 5.0
+alignment = 1
+
+[node name="Footer" type="HBoxContainer" parent="PageMargin/Content/Pages/BidPage" unique_id=2133805440]
+layout_mode = 2
+alignment = 2
+
+[node name="ConfirmBidButton" type="Button" parent="PageMargin/Content/Pages/BidPage/Footer" unique_id=879170790]
+custom_minimum_size = Vector2(260, 54)
+layout_mode = 2
+text = "Conferma e nascondi"
+
+[node name="ResultsPage" type="VBoxContainer" parent="PageMargin/Content/Pages" unique_id=881387153]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Scroll" type="ScrollContainer" parent="PageMargin/Content/Pages/ResultsPage" unique_id=471535211]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Body" type="VBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll" unique_id=1191330087]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="ValuePanel" type="PanelContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body" unique_id=1083242828]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ValuePanel" unique_id=2003574556]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ValuePanel/Content" unique_id=1209904180]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.725, 0.259, 1)
+theme_override_font_sizes/font_size = 15
+text = "VALORE REALE"
+
+[node name="RealValueLabel" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ValuePanel/Content" unique_id=841057930]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "0 crediti"
+horizontal_alignment = 1
+
+[node name="BidsPanel" type="PanelContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body" unique_id=1937660010]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel" unique_id=1718811806]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content" unique_id=1005179365]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.604, 0.655, 0.741, 1)
+theme_override_font_sizes/font_size = 15
+text = "TUTTE LE OFFERTE"
+
+[node name="BidRows" type="VBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content" unique_id=537293906]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Row1" type="HBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows" unique_id=884845913]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows/Row1" unique_id=964149642]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Giocatore"
+
+[node name="Amount" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows/Row1" unique_id=1665898983]
+layout_mode = 2
+text = "0 crediti"
+
+[node name="Row2" type="HBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows" unique_id=8601282]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows/Row2" unique_id=683425543]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Giocatore"
+
+[node name="Amount" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows/Row2" unique_id=935604599]
+layout_mode = 2
+text = "0 crediti"
+
+[node name="Row3" type="HBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows" unique_id=702409820]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows/Row3" unique_id=357497039]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Giocatore"
+
+[node name="Amount" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows/Row3" unique_id=1134408294]
+layout_mode = 2
+text = "0 crediti"
+
+[node name="Row4" type="HBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows" unique_id=688836212]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows/Row4" unique_id=2025748341]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Giocatore"
+
+[node name="Amount" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows/Row4" unique_id=1811368854]
+layout_mode = 2
+text = "0 crediti"
+
+[node name="Row5" type="HBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows" unique_id=1138926261]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows/Row5" unique_id=300897139]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Giocatore"
+
+[node name="Amount" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows/Row5" unique_id=258831879]
+layout_mode = 2
+text = "0 crediti"
+
+[node name="Row6" type="HBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows" unique_id=1185419119]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows/Row6" unique_id=1289283547]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Giocatore"
+
+[node name="Amount" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/BidsPanel/Content/BidRows/Row6" unique_id=146800780]
+layout_mode = 2
+text = "0 crediti"
+
+[node name="ObjectivesPanel" type="PanelContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body" unique_id=908802584]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ObjectivesPanel" unique_id=860752540]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ObjectivesPanel/Content" unique_id=1162533567]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.604, 0.655, 0.741, 1)
+theme_override_font_sizes/font_size = 15
+text = "INCARICHI RIVELATI"
+
+[node name="ObjectiveRows" type="VBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ObjectivesPanel/Content" unique_id=1215633994]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Objective1" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ObjectivesPanel/Content/ObjectiveRows" unique_id=1510038144]
+layout_mode = 2
+text = "Incarico"
+autowrap_mode = 2
+
+[node name="Objective2" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ObjectivesPanel/Content/ObjectiveRows" unique_id=1246648915]
+layout_mode = 2
+text = "Incarico"
+autowrap_mode = 2
+
+[node name="Objective3" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ObjectivesPanel/Content/ObjectiveRows" unique_id=1728130104]
+layout_mode = 2
+text = "Incarico"
+autowrap_mode = 2
+
+[node name="Objective4" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ObjectivesPanel/Content/ObjectiveRows" unique_id=2016391127]
+layout_mode = 2
+text = "Incarico"
+autowrap_mode = 2
+
+[node name="Objective5" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ObjectivesPanel/Content/ObjectiveRows" unique_id=484012299]
+layout_mode = 2
+text = "Incarico"
+autowrap_mode = 2
+
+[node name="Objective6" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ObjectivesPanel/Content/ObjectiveRows" unique_id=510340057]
+layout_mode = 2
+text = "Incarico"
+autowrap_mode = 2
+
+[node name="ScoresPanel" type="PanelContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body" unique_id=1461300375]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel" unique_id=1797546487]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content" unique_id=1072954776]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.604, 0.655, 0.741, 1)
+theme_override_font_sizes/font_size = 15
+text = "SITUAZIONE ATTUALE"
+
+[node name="ScoreRows" type="VBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content" unique_id=531323408]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Row1" type="HBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows" unique_id=485036770]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows/Row1" unique_id=1048125754]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Giocatore"
+
+[node name="Score" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows/Row1" unique_id=300861803]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.725, 0.259, 1)
+text = "0 totali"
+
+[node name="Row2" type="HBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows" unique_id=127161930]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows/Row2" unique_id=1279548354]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Giocatore"
+
+[node name="Score" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows/Row2" unique_id=627557052]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.725, 0.259, 1)
+text = "0 totali"
+
+[node name="Row3" type="HBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows" unique_id=1584624461]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows/Row3" unique_id=29091714]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Giocatore"
+
+[node name="Score" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows/Row3" unique_id=1335865984]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.725, 0.259, 1)
+text = "0 totali"
+
+[node name="Row4" type="HBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows" unique_id=99376740]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows/Row4" unique_id=1555334835]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Giocatore"
+
+[node name="Score" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows/Row4" unique_id=922860766]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.725, 0.259, 1)
+text = "0 totali"
+
+[node name="Row5" type="HBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows" unique_id=313898460]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows/Row5" unique_id=106184010]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Giocatore"
+
+[node name="Score" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows/Row5" unique_id=848896813]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.725, 0.259, 1)
+text = "0 totali"
+
+[node name="Row6" type="HBoxContainer" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows" unique_id=1378436994]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows/Row6" unique_id=777503348]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Giocatore"
+
+[node name="Score" type="Label" parent="PageMargin/Content/Pages/ResultsPage/Scroll/Body/ScoresPanel/Content/ScoreRows/Row6" unique_id=1900586007]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.725, 0.259, 1)
+text = "0 totali"
+
+[node name="Footer" type="HBoxContainer" parent="PageMargin/Content/Pages/ResultsPage" unique_id=1234235380]
+layout_mode = 2
+alignment = 2
+
+[node name="ResultsContinueButton" type="Button" parent="PageMargin/Content/Pages/ResultsPage/Footer" unique_id=1727232173]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 54)
+layout_mode = 2
+text = "Prossimo lotto"
+
+[node name="GameOverPage" type="VBoxContainer" parent="PageMargin/Content/Pages" unique_id=1354161158]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Scroll" type="ScrollContainer" parent="PageMargin/Content/Pages/GameOverPage" unique_id=32216445]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="RankingCards" type="VBoxContainer" parent="PageMargin/Content/Pages/GameOverPage/Scroll" unique_id=2124711593]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Card1" type="PanelContainer" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards" unique_id=901678130]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card1" unique_id=800031925]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card1/Content" unique_id=962542373]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "1° — Giocatore"
+
+[node name="Text" type="Label" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card1/Content" unique_id=120164026]
+layout_mode = 2
+text = "Patrimonio"
+autowrap_mode = 2
+
+[node name="Card2" type="PanelContainer" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards" unique_id=1118039840]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card2" unique_id=131490537]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card2/Content" unique_id=487067520]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "2° — Giocatore"
+
+[node name="Text" type="Label" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card2/Content" unique_id=1358362647]
+layout_mode = 2
+text = "Patrimonio"
+autowrap_mode = 2
+
+[node name="Card3" type="PanelContainer" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards" unique_id=709894968]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card3" unique_id=1642148787]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card3/Content" unique_id=1019704491]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "3° — Giocatore"
+
+[node name="Text" type="Label" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card3/Content" unique_id=2061907012]
+layout_mode = 2
+text = "Patrimonio"
+autowrap_mode = 2
+
+[node name="Card4" type="PanelContainer" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards" unique_id=430839818]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card4" unique_id=1955293091]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card4/Content" unique_id=451994068]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "4° — Giocatore"
+
+[node name="Text" type="Label" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card4/Content" unique_id=1112280718]
+layout_mode = 2
+text = "Patrimonio"
+autowrap_mode = 2
+
+[node name="Card5" type="PanelContainer" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards" unique_id=1095686188]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card5" unique_id=1768702006]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card5/Content" unique_id=870207600]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "5° — Giocatore"
+
+[node name="Text" type="Label" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card5/Content" unique_id=1081331201]
+layout_mode = 2
+text = "Patrimonio"
+autowrap_mode = 2
+
+[node name="Card6" type="PanelContainer" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards" unique_id=1965316872]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card6" unique_id=400693658]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Heading" type="Label" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card6/Content" unique_id=853841528]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "6° — Giocatore"
+
+[node name="Text" type="Label" parent="PageMargin/Content/Pages/GameOverPage/Scroll/RankingCards/Card6/Content" unique_id=862354277]
+layout_mode = 2
+text = "Patrimonio"
+autowrap_mode = 2
+
+[node name="Footer" type="HBoxContainer" parent="PageMargin/Content/Pages/GameOverPage" unique_id=1478470061]
+layout_mode = 2
+alignment = 2
+
+[node name="RestartButton" type="Button" parent="PageMargin/Content/Pages/GameOverPage/Footer" unique_id=1021900359]
+custom_minimum_size = Vector2(250, 54)
+layout_mode = 2
+text = "Nuova partita"
+
+[connection signal="pressed" from="PageMargin/Content/Pages/SetupPage/Footer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="PageMargin/Content/Pages/LotIntroPage/Footer/DistributeButton" to="." method="_on_distribute_button_pressed"]
+[connection signal="pressed" from="PageMargin/Content/Pages/HandoffPage/Footer/HandoffButton" to="." method="_on_handoff_button_pressed"]
+[connection signal="pressed" from="PageMargin/Content/Pages/SecretPage/Footer/SecretDoneButton" to="." method="_on_secret_done_button_pressed"]
+[connection signal="pressed" from="PageMargin/Content/Pages/DiscussionPage/Footer/SkipDiscussionButton" to="." method="_on_skip_discussion_button_pressed"]
+[connection signal="pressed" from="PageMargin/Content/Pages/BidPage/Footer/ConfirmBidButton" to="." method="_on_confirm_bid_button_pressed"]
+[connection signal="pressed" from="PageMargin/Content/Pages/ResultsPage/Footer/ResultsContinueButton" to="." method="_on_results_continue_button_pressed"]
+[connection signal="pressed" from="PageMargin/Content/Pages/GameOverPage/Footer/RestartButton" to="." method="_on_restart_button_pressed"]

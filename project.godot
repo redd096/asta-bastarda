@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="asta-bastarda"
-run/main_scene="uid://c66ohtraphyuk"
+run/main_scene="uid://bsrstx4lvfy3e"
 config/features=PackedStringArray("4.7")
 config/icon="res://icon.svg"
 
