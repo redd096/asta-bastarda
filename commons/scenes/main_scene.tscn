@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c66ohtraphyuk"]
+
+[ext_resource type="Script" uid="uid://yir4cn2oqvmr" path="res://commons/scripts/main.gd" id="1_6bynq"]
+
+[node name="MainScene" type="Node" unique_id=342105006]
+
+[node name="Control" type="Control" parent="." unique_id=849055531]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6bynq")
