@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bsrstx4lvfy3e"]
 
-[ext_resource type="Script" uid="uid://c2u5tfxidrlb0" path="res://commons/scripts/main.gd" id="1_6bynq"]
+[ext_resource type="Script" uid="uid://yir4cn2oqvmr" path="res://commons/scripts/main.gd" id="1_6bynq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleButtonHover"]
 bg_color = Color(0.976, 0.788, 0.416, 1)

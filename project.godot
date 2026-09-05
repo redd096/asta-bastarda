@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="asta-bastarda"
+config/name="asta_bastarda"
 run/main_scene="uid://bsrstx4lvfy3e"
 config/features=PackedStringArray("4.7")
 config/icon="res://icon.svg"
@@ -43,3 +43,4 @@ ui_cancel={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
